@@ -374,14 +374,18 @@ footer{
         background-color: rgb(67, 70, 70);
         border: 2px #8fb6d4;
         height:fit-content;
+        height: 70px;
     }
     .navn li{
         margin-top: 10px;
     }
     .logo{
-        height: 100px;
-        width: 100px;
+        height: 70px;
+        width: 70px;
         font-family: sans-serif;
+    }
+    #logo1{
+        max-height: 70px;
     }
     #welcome{
         /* text-transform: uppercase; */
@@ -503,7 +507,7 @@ footer{
 
     /* skill */
     .comm{
-        margin-top: 125px;
+        margin-top: 105px;
         justify-content:space-evenly;
         display: block;
         margin-left: 10px;  
@@ -514,6 +518,7 @@ footer{
     .comment{
         display: flex;
         margin:4px;
+        margin-top: 10pz;
         padding: 2px 4px;
         border-radius: 5px;
         
@@ -521,6 +526,7 @@ footer{
 
     /* skill */
     .lang{
+        display: block;
         margin-top: 10px;
         margin-bottom: 10px;
         padding-bottom: 10px;

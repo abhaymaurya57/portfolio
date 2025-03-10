@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import Comment
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 # def (request):
@@ -26,3 +27,11 @@ def signup(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+def comment(request):
+    comment = Comment.objects.all()
+    return render(request,'comment.html',{'comment':comment})
+
+# def comment(request,comment):
+#     comment = get_object_or_404(comment)
+#     return render(request , 'comment/comment.html',{'comment':comment})

@@ -8,6 +8,8 @@ urlpatterns = [
     path('skill/',views.skill,name='skill'),
     path('signin/',views.signin,name='signin'),
     path('signup/',views.signup,name='signup'),
+    path('comment/',views.comment,name='comment'),
+    # path('<int:comment>/',views.comment,name='comment')
     
 
 ]

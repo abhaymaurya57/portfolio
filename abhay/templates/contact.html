@@ -4,7 +4,9 @@
 {% tailwind_css %}
 <script src="{% static 'javascript.js' %}"></script>
 <link rel="stylesheet" href={% static "style.css" %}>
-
+{% block title %}
+        Contact | Page
+        {% endblock  %}
 {% block content %}
 <h1 class="wel" >Contact</h1>
 {% endblock  %}

@@ -33,6 +33,7 @@ urlpatterns = [
     path('signup/',include('abhay.urls')),
     path('skill/',include('abhay.urls')),
     path('contact/',include('abhay.urls')),
+    path('comment/',include('abhay.urls')),
 
 
 

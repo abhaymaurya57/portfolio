@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load static tailwind_tags %}
+{% tailwind_css %}
+<script src="{% static 'javascript.js' %}"></script>
+<link rel="stylesheet" href={% static "style.css" %}>
+{% block title %}
+        Comment | Page
+        {% endblock  %}
+{% block content %}
+<h1 class="wel" >comment</h1>
+{% endblock  %}
+
+{% block inside %}{% endblock  %}
+
+{% block leftside %}{% endblock  %}
+
+{% block midlerightside %}{% endblock  %}
+
+
+{% block footer %}
+
+{% for comm in comment %}
+<div class="">
+    <h3 class="">{{comm.comment}}</h3>
+    <img src="{{comm.image.url}}" alt="" class="">
+</div>
+{% endfor %}
+
+{% endblock  %}
+
+
