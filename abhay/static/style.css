@@ -1,13 +1,13 @@
-*{
+/* *{
 
     padding: 1;
     box-sizing: border-box;
     text-decoration: none;
-}
+} */
 
 body{
     /* background-color: rgb(225, 224, 231); */
-    background-color:#000043;
+    background-color:#003333;
 }
 
 :root{
@@ -234,17 +234,23 @@ footer{
     color: #f8b118;
 }
 .comm{
-    margin-top: 200px;
+    
+    margin-top: 100px;
 }
 .comment{
-    margin-top: 30px;
+    display: flex;
+    margin-top: 5px;
     padding: 4px 15px;
     border-radius: 5px;
-    background-color: #2d479b;
+    background-color: #90a8f8;
     color: #000000;
 }
-#suggestion{
+.suggestion{
     background-color: rgb(255, 115, 1);
+    color:#000000;
+}
+.yarri{
+    background-color: rgb(184, 37, 204);
     color:#000000;
 }
 .comm ul :hover{
@@ -324,7 +330,7 @@ footer{
 .lang{
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     text-align: center;
     font-size: 300;
     font-weight: 900;
@@ -344,9 +350,10 @@ footer{
     color:#44c1e0;
     margin-left: 30px;
     margin-top: 20px;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
 }
+
 
 
 @media screen and (max-width: 600px) {
@@ -496,16 +503,38 @@ footer{
 
     /* skill */
     .comm{
-        margin-top: 200px;
-        margin-left: 10px;
-         background-color: #3f0466;
-        color: #f3faff;
-    
+        margin-top: 125px;
+        justify-content:space-evenly;
+        display: block;
+        margin-left: 10px;  
     }
+    /* .comment{
+        margin:5px;
+    } */
     .comment{
+        display: flex;
+        margin:4px;
         padding: 2px 4px;
         border-radius: 5px;
-        background-color: #4ee448;
-        color: #f3faff;
+        
+    }
+
+    /* skill */
+    .lang{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        
+    }
+    
+    .lang ul li{
+        display: inline-block;
+        margin-left: 20px;
+        margin-top: 10px;
+        height: 40px;
+        width: 40px;
+    }
+    .lang ul{
+      
     }
 }
