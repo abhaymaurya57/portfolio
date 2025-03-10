@@ -1,0 +1,51 @@
+
+    {% extends "base.html" %}
+{% load static %}
+{% load static tailwind_tags %}
+{% tailwind_css %}
+<link rel="stylesheet" href='{% static "style.css" %}'>
+<script src="{% static 'javascript.js' %}"></script>
+
+{% block content %}
+<h1 class="wel" >Skill</h1>
+<div class="uselang">
+    <p  ><img  src="https://github-readme-stats.vercel.app/api/top-langs?username=abhaymaurya57&show_icons=true&locale=en&layout=compact" alt="abhaymaurya57" /></p>
+ {% comment %} <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=abhaymaurya57&show_icons=true&locale=en" alt="abhaymaurya57" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=abhaymaurya57&show_icons=true&locale=en" alt="abhaymaurya57" /></p> {% endcomment %}
+</div>
+{% endblock  %}
+{% block conte %}
+<div id="skills" class="">
+    <div class="lang">Languages
+        <ul>
+            <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/html.png' %}" alt=""></img>HTML</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/css.png' %}" alt=""></img>css</a></li>
+            <li><a href="https://www.learn-js.org/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/js.png' %}" alt=""></img>Java Script</a></li>
+            <li><a href="https://www.cprogramming.com/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/c.png' %}" alt=""></img>C</a></li>
+            <li><a href="https://www.python.org" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/python.png' %}" alt=""></img>Python</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/mysql.webp' %}" alt=""></img>Mysql</a></li>
+        </ul>
+    </div>
+    <div class="lang">Tool     |      Library
+        <ul>
+            <li><a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/gitt.png' %}" alt=""></img></a>Git</li>
+            <li><a href="https://github.com/abhaymaurya57" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/github.png' %}" alt=""></img>GitHub</a></li>
+            <li><a href="https://numpy.org/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/numpy1.png' %}" alt=""></img>NumPy</a></li>
+            <li><a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/pandas.png' %}" alt=""></img>Pandas</a></li>
+        </ul>
+    </div >
+    <div class="lang">Framework
+        <ul>
+            <li><a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/django.png' %}" alt=""></img>Django</a></li>
+            <li><a href="https://jinja.palletsprojects.com/en/stable/" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/jinja.png' %}" alt=""></img>jinja2</a></li>
+        </ul>
+    </div>
+    <div class="lang">Concept
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank" rel="noopener noreferrer"><img src="{% static 'icons/dsa.jpg' %}" alt=""></img>DSA</a></li>
+        </ul>
+   </div>
+ {% endblock  %}
+
+
+ {% comment %} {% block footer %}{% endblock  %} {% endcomment %}

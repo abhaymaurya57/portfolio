@@ -1,0 +1,198 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Home | Page
+        {% endblock  %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" >
+    <script src="{% static 'javascript.js' %}"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    {% tailwind_css %} 
+</head>
+
+
+<body >
+
+    {% comment %} this is navbar {% endcomment %}
+
+{% block navbar %}
+<nav id='nav' >
+            <div  class="logo" alt="Image">
+                <img id ="logo1" src={% static 'images/me.jpg' %} alt="Image">
+                {% comment %} <img src={% static 'images/logo.png' %} alt="Image"> {% endcomment %}
+            </div>
+            <div id="navbar" class="">
+                <ul class='navn'>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/skill">Skill</a></li>
+                    <li><a href="https://github.com/abhaymaurya57/project" target="_blank">Project</a></li>
+                    {% comment %} <button><a href="/signin">SignIn</a></button></li>
+                    <button><a href="/signup">SignUp</a></button></li> {% endcomment %}
+                </ul>
+            </div>
+    
+            <div id="logo2" class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Image">
+                <div class="center">
+                    <h1 id="clock"></h1>
+                </div>
+            </div> 
+</nav>
+
+{% endblock  %}
+
+{% block content %}
+<h1 id="welcome" >Welcome To My Profile</h1>
+{% endblock  %}
+
+{% comment %} midle in top {% endcomment %}
+{% block conte %}
+<div id="midle" class="">
+    {% block leftside %}
+        <div class="rightside">
+            <ul id="iconleft" class="iconright">
+                <li><a href="https://www.linkedin.com/in/abhaykush12" target="_blank">
+                    <img src={% static 'icons/linkdin.png'%}>
+                </a></li>
+                <li><a href="https://github.com/abhaymaurya57" target="_blank">
+                    <img src={% static 'icons/github.png'%}>
+                </a></li>
+                <li><a href="https://gmail.com/abh.mrya1" target='_blank'>
+                    <img src={% static 'icons/gmail.png'%}>
+                </a></li>
+                <li><a href="https://www.quora.com/profile/Abhay-Kumar-Maurya-4" target="_blank">
+                    <img src={% static 'icons/quera.png'%}>
+                </a></li>
+                
+                
+            </ul>
+        </div>
+    {% endblock  %}
+
+
+    {% block inside %}
+        <div class="midlein home">
+         <section >
+                <div class="home-content">
+                    <h3>Hello, It's Me</h3>
+                    <h1 id="name" >Abhay Kumar Maurya</h1>
+                    <h3 id="what"><span>And I'm a Engineering Student</span></h3>
+                    <p>i am corentaly studey for .......</p>
+                    <div class="home-sci">
+                        <a href="https://fb.com/abhaykush123" target='_blank'><i class='bx bxl-facebook-square'></i></a>
+                        <a href="https://instagram.com/abh.mrya" target='_blank'><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-whatsapp' target='_blank'></i></a>
+                        <a href="https://twitter.com/abhay_kush_57" target='_blank'><i class='bx bx-x'></i></a>
+                    </div>
+                    <a href="" class="btn-box">More About me</a>
+                </div>
+            </section>
+        </div>
+    {% endblock  %}
+
+    {% block midlerightside %}
+        <div class="rightside">
+            <ul id="iconleft" class="iconright">
+                <li><a href="https://fb.com/abhaykush123" target="blank" >
+                    <img src={% static 'icons/fb.png'%}>
+                </a></li>
+                <li><a href="https://www.youtube.com/@abhaykush12" target="_blank">
+                    <img src={% static 'icons/youtube.png'%}>
+                </a></li>
+                <li><a href="https://twitter.com/abhay_kush_57" target="_blank">
+                    <img src={% static 'icons/x.png'%}>
+                </a></li>
+                <li><a href="https://instagram.com/abh.mrya" target="_blank">
+                    <img src={% static 'icons/instagram.png'%}>
+                </a></li>
+                
+                <li><a href="https://wa.me/9936961907" target="_blank">
+                    <img src={% static 'icons/whatsapp.png'%}>
+                </a></li>
+                <li><a href="https://t.me/abh_mrya" target="_blank">
+                    <img src={% static 'icons/tele.png'%}>
+                </a></li>
+                
+            </ul>
+        </div>
+    {% endblock  %}
+</div> 
+{% endblock  %}
+
+
+{% block footer %}
+<footer>
+    <div id="footer">
+    © Copyright 2025. All Rights Reserved 
+    </div>
+    <div id="foot">
+        <div class="footbut ">skills
+            <ul>
+                <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">HTML</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener noreferrer">css</a></li>
+                <li><a href="https://www.learn-js.org/" target="_blank" rel="noopener noreferrer">Java Script</a></li>
+                <li><a href="https://www.cprogramming.com/" target="_blank" rel="noopener noreferrer">C</a></li>
+                <li><a href="https://www.python.org" target="_blank" rel="noopener noreferrer">Python</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener noreferrer">Mysql</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank" rel="noopener noreferrer">DSA</a></li>
+                {% comment %} <li><a href="https://github.com/abhaymaurya57" target="_blank" rel="noopener noreferrer">GitHub</a></li> {% endcomment %}
+                {% comment %} <li><a href="https://numpy.org/" target="_blank" rel="noopener noreferrer">NumPy</a></li> {% endcomment %}
+                {% comment %} <li><a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">Pandas</a></li> {% endcomment %}
+                <li><a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer">Django</a></li>
+                {% comment %} <li><a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git</li> {% endcomment %}
+            </ul>
+        </div>
+        
+        <div class="footbut">Contact
+            <ul >
+                <li><a href="https://www.linkedin.com/in/abhaykush12" target="_blank">Linkdin</a></li>
+                <li><a href="https://github.com/abhaymaurya57" target="_blank">GitHub</a></li>
+                <li><a href="https://gmail.com/abh.mrya1" target='_blank'>Gmail</a></li>
+                <li><a href="https://fb.com/abhaykush123" target="blank" >Facebook</a></li>
+                <li><a href="https://www.youtube.com/@abhaykush12" target="_blank">YouTube</a></li>
+                <li><a href="https://instagram.com/abh.mrya" target="_blank">Instgram</a></li>
+                <li><a href="https://www.quora.com/profile/Abhay-Kumar-Maurya-4" target="_blank">Quora</a></li>
+                <li><a href="https://twitter.com/abhay_kush_57" target="_blank">X</a></li>   
+            </ul>
+        </div>
+        {% comment %} <div class="footbut">About
+
+        </div> {% endcomment %}
+        <div class="footbut">project
+            <ul class="">
+                <li><a href="https://github.com/abhaymaurya57/project/tree/master/student_managment" target="_blank" rel="noopener noreferrer">Std.MS</a></li>
+            </ul>
+        </div>
+        <div class="comm">
+            <ul>
+                <a class="comment" href="">comment</a>
+                <a id ="suggestion" class="comment" href="">suggestion</a>
+                <a class="comment" href="">suggestion</a>
+            </ul>
+        </div>
+    </div>
+    
+</footer>
+<footer class="update">
+    <div><p >Last Updated: <span id="lastUpdated">{{ lastUpdated}}</span></p></div>
+    <div ><a><img class="flag" src="{% static 'icons/india.png' %}" alt="india" >indian</a></div> 
+</footer>
+{% endblock  %}
+
+
+
+</body>
+</html>
