@@ -1,13 +1,13 @@
-/* *{
+*{
 
-    padding: 1;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-} */
+}
 
 body{
     /* background-color: rgb(225, 224, 231); */
-    background-color:#003333;
+    background-color:#040122;
 }
 
 :root{
@@ -55,7 +55,7 @@ button a{
     /* border-style: solid;
     border-width: 10px;
     border-color:rgb(23, 58, 58); */
-    background-color: #4a474d;
+    background-color: #0f092b;
     display:flex;
     justify-content:space-between;
 }
@@ -69,8 +69,10 @@ button a{
     
 }
 #logo1:hover{
+    transform:rotateY(720deg);
+    transition: 2s;
     /* saftey perpus */
-    display: none;
+    /* display: none; */
 }
 .navn{
     display: inline;
@@ -115,12 +117,15 @@ button :hover{
     width: 20px;
     height: 20px;
 }
-/* #iconleft li  a:hover{
-    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
-    border-radius: 50%;
-    height: 20px;
-    width: 30px;   
-} */
+#iconleft li  a:hover{
+    box-shadow: 0 0 5px cyan,0 0 25px rgb(166, 178, 243),0 0 50px rgb(155, 199, 142),0 0 100px rgb(255, 97, 97),0 0 200px rgb(102, 8, 63);
+    border-radius: 50%; 
+    transition: .2s; 
+}
+.iconright li img:hover{
+    transform:rotate(1080deg);
+    transition: 1s;
+}
 .rightside{
     display: inline-block;
     justify-content: space-between;
@@ -299,6 +304,10 @@ footer{
     /* height: 230px; */
     width: 270px;
 }
+.uselang :hover{
+    transform:rotate3d(3, 2, 5,360deg);
+    transition: 2s;
+}
 #aboutmid{
     max-width:800px;
     margin-top: 60px;
@@ -320,6 +329,7 @@ footer{
 #skills{
     margin-top: 20px;
     color: #ff8a1d;
+    text-decoration:solid;
     /* background-image: url( 'images/back.png'); */
     background-size: cover;
     background-position: center;
@@ -539,8 +549,5 @@ footer{
         margin-top: 10px;
         height: 40px;
         width: 40px;
-    }
-    .lang ul{
-      
     }
 }

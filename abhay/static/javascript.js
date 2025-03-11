@@ -1,17 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     const welcome = document.getElementById('logo1');
-//     setInterval(() => {
-//         welcome.src = "images/logo.png";
-//     }, 1000);
-// });
-// document.addEventListener("DOMContentLoaded", () => {
-//     const welcome = document.getElementById('logo1');
-
-//     setInterval(() => {
-//         welcome.src = "images/images/me.jpg";
-//     }, 2000);
-// });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
