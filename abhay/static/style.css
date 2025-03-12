@@ -7,7 +7,7 @@
 
 body{
     /* background-color: rgb(225, 224, 231); */
-    background-color:#040122;
+    background-color:#06023f;
 }
 
 :root{
@@ -364,7 +364,67 @@ footer{
     width: 40px;
 }
 
+/* form  comment section */
 
+
+.title{
+    color: rgb(12, 248, 217);
+}
+.commentbar h1{
+    margin: 20px;
+    font-weight: 800;
+    font-size:40px;
+    /* font-size: xx-large; */
+    justify-items: center;
+    
+}
+.form{
+    max-width: 600px;
+        
+        margin: auto;
+        
+        padding: 10px;
+        
+        border: 1px solid #ccc;
+        
+        border-radius: 5px;
+    background-color: rgb(0, 55, 105);
+}
+.form label {
+    display: block;
+       
+       margin-bottom: 5px;
+    color: rgb(12, 225, 240);
+    background-color: rgb(0, 55, 105);
+}
+.form input,textarea{
+    width: 100%;  
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(6, 61, 87);
+    color: aliceblue;
+}
+#feedback{
+    background-color: rgb(6, 61, 87);
+    color: aliceblue;
+}
+.form  input[type="submit"] {
+        
+    background-color: #4CAF50;
+    
+    color: white;
+    
+    border: none;
+    
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+    
+    background-color: #45a049;
+}
 
 @media screen and (max-width: 600px) {
     
@@ -550,4 +610,30 @@ footer{
         height: 40px;
         width: 40px;
     }
+
+
+
+    /* comment section */
+        .title h1{
+            height: auto;
+            font-size: 700;
+            font-weight: 600;
+            margin-top: 20px;  
+        }
+        .form{
+            margin-top: 5px;
+            /* font-size: 20; */
+            height: 100%;
+            width: 80%;
+         
+        }    
+        .commentbar h1{
+            margin: 30px;
+            font-weight: 800;
+            font-size:30px;
+            /* font-size: xx-large; */
+            justify-items: center;
+            
+        }
+    
 }

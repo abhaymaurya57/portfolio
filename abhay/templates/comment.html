@@ -1,4 +1,4 @@
-{% comment %} {% extends "base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% load static tailwind_tags %}
 {% tailwind_css %}
@@ -11,7 +11,8 @@
 <h1 class="wel" >comment</h1>
 {% endblock  %}
 
-{% block inside %}{% endblock  %}
+{% block inside %} {% endblock  %}
+
 
 {% block leftside %}{% endblock  %}
 
@@ -20,13 +21,39 @@
 
 {% block footer %}
 
-{% for comm in comment %}
+{% comment %} {% for comm in comment %}
 <div class="">
     <h3 class="">{{comm.comment}}</h3>
     <img src="{{comm.image.url}}" alt="" class="">
 </div>
-{% endfor %}
+{% endfor %} {% endcomment %}
 
-{% endblock  %} {% endcomment %}
+{% endblock  %}
 {% load static %}
-<link rel="stylesheet" href={% static "style1.css" %}>
+{% comment %} <link rel="stylesheet" href={% static "style1.css" %}> {% endcomment %}
+
+{% block comment %}<div class="commentbar">
+    <h1 class ="title">Comment</h1>
+    {% csrf_token %}
+    <form action="/" method="post" class="form">
+
+        <label for="name">*Name:</label>
+        
+        <input type="text" id="name" name="name" required><br><br>
+    
+        <label for="phone.no." class="">phone No.</label>
+        <input type="number" name="number" id="number">
+
+        <label for="email">*Email:</label>
+        
+        <input type="email" id="email" name="email" required><br><br>
+    
+        <label for="feedback">Comment:</label><br>
+        
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+    
+        <input type="submit" value="Submit">
+        
+    </form>
+</div>
+{% endblock  %}
