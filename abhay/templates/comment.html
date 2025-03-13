@@ -9,6 +9,7 @@
         {% endblock  %}
 {% block content %}
 <h1 class="wel" >comment</h1>
+
 {% endblock  %}
 
 {% block inside %} {% endblock  %}
@@ -35,25 +36,29 @@
 {% block comment %}<div class="commentbar">
     <h1 class ="title">Comment</h1>
     {% csrf_token %}
-    <form action="/" method="post" class="form">
-
+    <form action="/comment/" method="post" class="form">
+        {% csrf_token %}
         <label for="name">*Name:</label>
         
-        <input type="text" id="name" name="name" required><br><br>
+        {% comment %} <input type="text" id="name" name="name" required><br><br> {% endcomment %}
+        <input type="text" name="name" placeholder="Your Name" required>
     
-        <label for="phone.no." class="">phone No.</label>
-        <input type="number" name="number" id="number">
+        <label for="number" class="">phone No.</label>
+        {% comment %} <input type="number" name="number" id="number"> {% endcomment %}
+        <input type="text" name="number" placeholder="Your Phone Number">
 
         <label for="email">*Email:</label>
         
-        <input type="email" id="email" name="email" required><br><br>
+        {% comment %} <input type="email" id="email" name="email" required><br><br> {% endcomment %}
+        <input type="email" name="email" placeholder="Your Email" required>
     
         <label for="feedback">Comment:</label><br>
         
-        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+        {% comment %} <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br> {% endcomment %}
+        <textarea name="feedback" placeholder="Your Comment"></textarea>
     
         <input type="submit" value="Submit">
-        
+    {% comment %} <button type="submit">Submit</button> {% endcomment %}
     </form>
 </div>
 {% endblock  %}

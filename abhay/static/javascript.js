@@ -3,11 +3,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const img = document.getElementById("logo1");
     const images = [
-        // "/static/images/me.jpg",
+        "/static/images/me.jpg",
         // "/static/images/logo.png",
         // "/static/images/me2.jpg",
-        // "/static/images/me3.jpg",
-        // "/static/images/me4.jpg",
+        "/static/images/me3.jpg",
+        "/static/images/me4.jpg",
         // "/static/images/me5.jpg",
     ];
     let index = 0;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded",function () {
     const clock = document.getElementById('clock');
     setInterval(function () {
         let time = new Date();
-        clock.innerHTML = time.toLocaleDateString; 
+        clock.innerHTML = time.toLocaleDateString(); 
     }, 1000);
 });
 

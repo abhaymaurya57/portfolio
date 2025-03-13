@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from .models import Comment
+from abhay.models import Comment
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
+import mysql.connector
+# from dateti  me import datetime
 # Create your views here.
 
 # def (request):
@@ -28,10 +31,26 @@ def signup(request):
 def contact(request):
     return render(request,'contact.html')
 
-def comment(request):
-    comment = Comment.objects.all()
-    return render(request,'comment.html',{'comment':comment})
 
-# def comment(request,comment):
-#     comment = get_object_or_404(comment)
-#     return render(request , 'comment/comment.html',{'comment':comment})
+                           # mysql
+# from django.views.decorators.csrf import csrf_exempt
+
+# @csrf_exempt
+def comment(request):
+    if request.method=='POST':
+        name = request.POST.get('name')     #data ko la rahe hai html se
+        number = request.POST.get('number')
+        email = request.POST.get('email')
+        feedback = request.POST.get('feedback')
+        # comment = Comment(name=name,email=email,phone=phone,feedback=feedback)    #object
+        conn=mysql.connector.connect(host="localhost",user="root",password="Admin",database="comment")
+
+        cursor = conn.cursor()
+        query="insert into users values('{}','{}','{}','{}')".format(name,number,email,feedback)
+        cursor.execute(query)
+        conn.commit()
+
+
+        comment = Comment(name=name,email=email,phone=number,feedback=feedback)    #object
+        comment.save()
+    return render(request,'comment.html')

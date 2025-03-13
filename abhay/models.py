@@ -1,8 +1,15 @@
 from django.db import models
-from django.utils import timezone
+# from django.utils import timezone
+# import mysql_connector as sql
+
+
 # Create your models here.
+
 class Comment(models.Model):
-    Name=Name
-    models.EmailField(_(""), max_length=254)
-    models.PhoneNumberField((""))
-    
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    feedback = models.TextField()
+
+    def __str__(self):
+        return self.name

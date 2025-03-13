@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,6 +44,8 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     "django_browser_reload",
+    "sql"
+    # 'abhay.apps.AbhayConfig',
 ]
 
 TAILWIND_APP_NAME = "theme"
@@ -87,23 +92,22 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'comment',  # Change this to your database name
-#         'USER': 'root',  # Change this to your MySQL username
-#         'PASSWORD': 'Admin',  # Change this to your MySQL password
-#         'HOST': 'localhost',
-#         'PORT': '3306',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'comment',  
+        'USER': 'root',  
+        'PASSWORD': 'Admin',  
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 

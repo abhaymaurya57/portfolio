@@ -28,12 +28,12 @@ urlpatterns = [
     # path('index/',views.index,name='index'),
     path('',include('abhay.urls')),
     # path('home/',include('abhay.urls')),
-    path('about/',include('abhay.urls')),
-    path('signin/',include('abhay.urls')),
-    path('signup/',include('abhay.urls')),
-    path('skill/',include('abhay.urls')),
-    path('contact/',include('abhay.urls')),
-    path('comment/',include('abhay.urls')),
+    # path('about/',include('abhay.urls')),
+    # path('signin/',include('abhay.urls')),
+    # path('signup/',include('abhay.urls')),
+    # path('skill/',include('abhay.urls')),
+    # path('contact/',include('abhay.urls')),
+    # path('comment/',include('abhay.urls')),
 
 
 
