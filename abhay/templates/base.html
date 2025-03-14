@@ -177,9 +177,10 @@
         </div>
         <div class="comm">
             <ul>
-                <a  class="comment" href="{% url 'comment' %}">comment</a>
-                <a  class="comment suggestion as" href="">suggestion</a>
-                <a class="comment yarri" href="">yarri</a>
+                {% comment %} both ka href are same {% endcomment %}
+                <a  class="comment" href="{% url 'comment' %}">comment</a>        
+                <a  class="comment suggestion as" href="/contact">contact</a>
+                <a class="comment yarri" href="">-+-+-+-+-</a>
             </ul>
         </div>
     </div>
@@ -192,6 +193,6 @@
 {% endblock  %}
 
 {% block comment %}{% endblock  %}
-
+{% block contact %}{% endblock  %}
 </body>
 </html>

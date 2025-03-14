@@ -8,6 +8,7 @@
         Comment | Page
         {% endblock  %}
 {% block content %}
+
 <h1 class="wel" >comment</h1>
 
 {% endblock  %}
@@ -33,7 +34,8 @@
 {% load static %}
 {% comment %} <link rel="stylesheet" href={% static "style1.css" %}> {% endcomment %}
 
-{% block comment %}<div class="commentbar">
+{% block comment %}
+<div class="commentbar">
     <h1 class ="title">Comment</h1>
     {% csrf_token %}
     <form action="/comment/" method="post" class="form">
