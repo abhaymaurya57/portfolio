@@ -11,6 +11,7 @@ import mysql.connector
 # def (request):
 #     return render(request,'')
 conn=mysql.connector.connect(host="localhost",user="root",password="Admin",database="comment")
+# cont=mysql.connector.connect(host="localhost",user="root",password="Admin",database="contact")
 
 def  base(request):
     return render(request,'base.html')
@@ -39,7 +40,12 @@ def contact(request):
         number = request.POST.get('number')
         email = request.POST.get('email')
         whatsapp = request.POST.get('whatsapp')
-    
+
+        cursor = conn.cursor()
+        query="insert into contact values('{}','{}','{}','{}')".format(name,number,email,whatsapp)
+        cursor.execute(query)
+        conn.commit()
+
         contact = Contact(name=name,email=email,phone=number,whatsapp=whatsapp)    #object
         contact.save()
     return render(request,'contact.html')

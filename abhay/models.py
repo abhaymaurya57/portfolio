@@ -16,9 +16,10 @@ class Comment(models.Model):
     
 class Contact(models.Model):
     name = models.CharField(max_length=255)
+    
+    phone = models.BigIntegerField(max_length=20)
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    whatsapp = models.CharField(max_length=20, blank=True, null=True) 
+    whatsapp = models.CharField(max_length=20) 
 
     def __str__(self):
         return self.name
