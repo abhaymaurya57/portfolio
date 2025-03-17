@@ -12,20 +12,16 @@
 
 {% block conte %}
 <div class="commentbar">
-    <h1 class ="title">Admin</h1>
+    <h1 class ="title">Admin Login</h1>
     {% csrf_token %}
     <form action="/upload/" method="POST" class="form">
         {% csrf_token %}
-        <label for="username">*userid:</label>
+        <label for="username">*userid</label>
         
         <input type="text" name="userid" placeholder="userid" required>
-
-        <label for="useri">*password</label>
-        
-        <input type="text" name="password" placeholder="password" required>
     
-        {% comment %} <label for="password" class="">Password</label>
-        <input type="password" name="password" placeholder="password"> {% endcomment %}
+        <label for="password" class="">*Password</label>
+        <input type="password" name="password" placeholder="password">
 
         
         <input type="submit" value="Submit">
@@ -33,7 +29,7 @@
     {% if error %}
     <p style="color: red;">{{ error }}</p>
     {% endif %}
-<div>
+
 {% endblock  %}
 
 

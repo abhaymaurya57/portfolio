@@ -7,7 +7,7 @@
 
 body{
     /* background-color: rgb(225, 224, 231); */
-    background-color:#205781;
+    background-color:#264653;
 }
 
 :root{
@@ -57,7 +57,7 @@ button a{
     border-color:rgb(23, 58, 58);*/
     background-color:#096f7a2f;
 
-    color: #ffd1f5;;
+    color: #71bfd3;
     display:flex;
     justify-content:center;
 }
@@ -84,7 +84,7 @@ button a{
     /* display: none; */
 }
 #navbar{
-    background-color: #3087b9;
+    background-color: #0d3146;
     /* margin-top: 0px; */
     transition:2s;
     transform:rotate3d(360deg)
@@ -106,7 +106,10 @@ button a{
 
 
 .navn li a:hover{
-    color:rgb(236, 157, 53);
+    color:#e081a6;
+    transition: 2s;
+    transform-style: preserve-3d;
+    transform:rotateX(360deg);
 
 }
 .navn li{
@@ -150,7 +153,10 @@ button :hover{
 #iconleft li  a:hover{
     box-shadow: 0 0 5px cyan,0 0 25px rgb(166, 178, 243),0 0 50px rgb(155, 199, 142),0 0 100px rgb(255, 97, 97),0 0 200px rgb(102, 8, 63);
     border-radius: 50%; 
-    transition: .2s; 
+    /* transition: .2s;  */
+    transition: 4s;
+    transform-style: preserve-3d;
+    transform:rotateX(7200deg);
 }
 .iconright li img:hover{
     transform:rotate(1080deg);
@@ -170,7 +176,7 @@ footer{
 
 
               /* home bar */
-.home{color: var(--text-use);
+.home{color: #86d6eb;
       position: relative;
       margin-left: 40px;
       margin-right: 0;
@@ -218,8 +224,11 @@ footer{
             .home-sci a:hover{
     
                 background: rgb(77, 162, 231);
-                color: #0f4faf;
-                box-shadow: 0 0  20px rgb(105, 129, 207);
+                color: #000000;
+                box-shadow: 0 0  20px rgb(54, 202, 228);
+                transition: 2s;
+                transform-style: preserve-3d;
+                transform:rotateY(360deg);
             }
             
             .btn-box{
@@ -236,7 +245,13 @@ footer{
             
             }
             .btn-box:hover{
-                box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
+                background: #039191;
+                color: #000000;
+                box-shadow: 0 0  20px rgb(105, 129, 207);
+                transition: 2s;
+                transform-style: preserve-3d;
+                transform:rotateX(360deg);
+                box-shadow: 0 0 5px rgb(50, 207, 207),0 0 25px rgb(33, 194, 194),0 0 50px rgb(25, 184, 184),0 0 100px rgb(27, 194, 194),0 0 200px rgb(24, 184, 184);
             }
 #footer{
     font-weight: 400;
@@ -480,6 +495,14 @@ footer{
     background-color: #3f2f47;
     border-color: rgb(57, 24, 109);
 }
+
+
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
     
     li{ margin-inline: 10px;
@@ -495,14 +518,23 @@ footer{
         
     }
     #nav{
-        background-color: rgb(67, 70, 70);
+        background-color: #264653;
         border: 2px #8fb6d4;
         height:fit-content;
         height: 70px;
     }
+    .navm h1{
+        font-size:15px;
+    }
     /* .navn li{
         margin-top: 10px;
     } */
+    .navn li a{
+    
+        color: rgb(36, 156, 172);
+        border-right: 5px;
+        margin-inline: 2px;
+    }
     .logo{
         height: 70px;
         width: 70px;
@@ -512,6 +544,7 @@ footer{
         max-height: 70px;
     }
     #welcome{
+        display: none;
         /* text-transform: uppercase; */
         font-weight: 500;
         text-align: center;
@@ -535,19 +568,31 @@ footer{
         background-color:var(--accent-color-dark);
     }
     #iconleft a{ 
-        padding-top: 40px;
-        margin-top: 0;
+        /* padding-top: 40px; */
+        /* margin-top: 0; */
         display:inline-block;
-        justify-content: space-between;
+        justify-content:space-evenly;
     }
-    /* #iconleft li  a:hover{
-        height: 20px;
-        width: 30px; 
-    } */
+    #iconleft img{
+        margin-top: 30px;
+        /* padding-top: 30px; */
+        align-items:center;
+        display:table-row;
+        justify-content:space-evenly;
+    }
+    #iconleft li  a:hover{
+        box-shadow:none ;
+        /* border-radius: 50%;  */
+        /* transition: .2s; */
+        transition: 0s;
+        transform-style:preserve-3d;
+        transform:rotateX(360);
+    }
     .iconright{
         width: 40px;
     }
     .rightside {
+        background-color: #1b3d4b;
         display:flex;
         width: 40px;
     }

@@ -32,6 +32,8 @@ def signin(request):
 def signup(request):
     return render(request,'signup.html')
 
+def login(request):
+    return render(request,"login.html")
 
 
 def contact(request):
@@ -75,8 +77,6 @@ def comment(request):
     return render(request,'comment.html')
 
 
-def login(request):
-    return render(request,"login.html")
 
 from django.http import HttpResponse
 def upload(request): 
@@ -117,29 +117,4 @@ def upload(request):
             return HttpResponse(f"Database error: {err}")
     return render(request, 'login.html')
     
-
-    # query = "SELECT * FROM comment.contact "
-    # # users = cursor.fetchall(query)
-    # cursor = conn.cursor()
-    # cursor.execute(query)
-    # rows=cursor.fetchall()
-    # for row in rows:
-    #         print(row)
-    # return render(request,'upload.html',{'rows': rows})
-
-# from django.views import View
-# class UploadView(View):
-#     def get(self, request):
-#         return render(request, 'login.html')
-#     def post(self,request):
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         if (username==1234 ,password==4321):
-#             db = mysql.connector.connect(
-#                     host='localhost',
-#                     user='root',
-#                     password='Admin',
-#                     database='comment'
-#                     )
-
             

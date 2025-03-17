@@ -23,9 +23,7 @@
 <body >
 
     {% comment %} this is navbar {% endcomment %}
-    {% block content %}
-    <h1 id="welcome" >Welcome To My Profile</h1>
-    {% endblock  %}
+    
      
 {% block navbar %}
 <nav id='nav' >
@@ -34,8 +32,8 @@
                 {% comment %} <img src={% static 'images/logo.png' %} alt="Image"> {% endcomment %}
             </div>
             <div class="navm">
-                <h1>Lorem ipsum dolor sit amet consectetur </h1>
-                <h3>hii</h3>
+                <h1>Thank you for visiting my website</h1>
+                <h3></h3>
                 <h4>er</h4>
             </div>
             
@@ -49,6 +47,10 @@
 </nav>
 {% endblock  %}
 
+
+{% block content %}
+    <h1 id="welcome" >Welcome To My Profile</h1>
+    {% endblock  %}
 
 
 <div id="navbar" class="">
