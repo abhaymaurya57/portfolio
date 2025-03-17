@@ -24,20 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     # path('/',include('abhay.urls')),
     path('admin/', admin.site.urls),
-    # path('',views.home,name='home'),
-    # path('index/',views.index,name='index'),
     path('',include('abhay.urls')),
-    # path('home/',include('abhay.urls')),
-    # path('about/',include('abhay.urls')),
-    # path('signin/',include('abhay.urls')),
-    # path('signup/',include('abhay.urls')),
-    # path('skill/',include('abhay.urls')),
-    # path('contact/',include('abhay.urls')),
-    # path('comment/',include('abhay.urls')),
-
-
-
-
 
     path("__reload__/", include("django_browser_reload.urls")),
 

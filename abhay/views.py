@@ -73,3 +73,73 @@ def comment(request):
         comment = Comment(name=name,email=email,phone=number,feedback=feedback)    #object
         comment.save()
     return render(request,'comment.html')
+
+
+def login(request):
+    return render(request,"login.html")
+
+from django.http import HttpResponse
+def upload(request): 
+    if request.method == 'POST':
+        userid = request.POST.get('userid')     #data ko la rahe hai html se
+        password = request.POST.get('password')
+
+        if not userid or not password:
+            return render(request, 'login.html', {'error': 'Both fields are required'})
+        
+        try:
+            db = mysql.connector.connect(
+                        host='localhost',
+                        user='root',
+                        password='Admin',
+                        database='comment'
+                        )
+            cur = db.cursor()
+            query = "SELECT * FROM login WHERE userid = %s AND password = %s"
+            cur.execute(query, (userid, password))
+            user = cur.fetchone()
+
+            if user:
+                query = "SELECT * FROM comment.contact "
+                curso = db.cursor()
+                curso.execute(query)
+                rows = curso.fetchall()
+
+                query = "SELECT * FROM comment.users"
+                cursor = db.cursor()
+                cursor.execute(query)
+                uses = cursor.fetchall()
+                return render(request, 'upload.html', {'rows': rows,'uses':uses})
+            else:
+                return render(request, 'login.html', {'error': 'Invalid userid or password'})
+
+        except mysql.connector.Error as err:
+            return HttpResponse(f"Database error: {err}")
+    return render(request, 'login.html')
+    
+
+    # query = "SELECT * FROM comment.contact "
+    # # users = cursor.fetchall(query)
+    # cursor = conn.cursor()
+    # cursor.execute(query)
+    # rows=cursor.fetchall()
+    # for row in rows:
+    #         print(row)
+    # return render(request,'upload.html',{'rows': rows})
+
+# from django.views import View
+# class UploadView(View):
+#     def get(self, request):
+#         return render(request, 'login.html')
+#     def post(self,request):
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         if (username==1234 ,password==4321):
+#             db = mysql.connector.connect(
+#                     host='localhost',
+#                     user='root',
+#                     password='Admin',
+#                     database='comment'
+#                     )
+
+            

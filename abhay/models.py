@@ -1,6 +1,8 @@
 from django.db import models
 # from django.utils import timezone
 # import mysql_connector as sql
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
 # Create your models here.
@@ -17,7 +19,7 @@ class Comment(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length=255)
     
-    phone = models.BigIntegerField(max_length=20)
+    phone = models.BigIntegerField()
     email = models.EmailField()
     whatsapp = models.CharField(max_length=20) 
 

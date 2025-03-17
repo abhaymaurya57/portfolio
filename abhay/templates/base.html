@@ -23,39 +23,45 @@
 <body >
 
     {% comment %} this is navbar {% endcomment %}
-
+    {% block content %}
+    <h1 id="welcome" >Welcome To My Profile</h1>
+    {% endblock  %}
+     
 {% block navbar %}
 <nav id='nav' >
             <div  class="logo" alt="Image">
                 <img id ="logo1" src={% static 'images/me.jpg' %} alt="Image">
                 {% comment %} <img src={% static 'images/logo.png' %} alt="Image"> {% endcomment %}
             </div>
-            <div id="navbar" class="">
-                <ul class='navn'>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/skill">Skill</a></li>
-                    <li><a href="https://github.com/abhaymaurya57/project" target="_blank">Project</a></li>
-                    {% comment %} <button><a href="/signin">SignIn</a></button></li>
-                    <button><a href="/signup">SignUp</a></button></li> {% endcomment %}
-                </ul>
+            <div class="navm">
+                <h1>Lorem ipsum dolor sit amet consectetur </h1>
+                <h3>hii</h3>
+                <h4>er</h4>
             </div>
+            
     
-            <div id="logo2" class="logo">
+            {% comment %} <div id="logo2" class="logo">
                 <img src="{% static 'images/logo.png' %}" alt="Image">
                 <div class="center">
                     <h1 id="clock"></h1>
                 </div>
-            </div> 
+            </div>  {% endcomment %}
 </nav>
-
 {% endblock  %}
 
-{% block content %}
-<h1 id="welcome" >Welcome To My Profile</h1>
-{% endblock  %}
 
+
+<div id="navbar" class="">
+    <ul id="navn" class='navn'>
+        |<li><a href="/">Home</a></li>|
+        <li><a href="/about">About</a></li>|
+        <li><a href="/contact">Contact</a></li>|
+        <li><a href="/skill">Skill</a></li>|
+        <li><a href="https://github.com/abhaymaurya57/project" target="_blank">Project</a></li>|
+        {% comment %} <button><a href="/signin">SignIn</a></button></li>
+        <button><a href="/signup">SignUp</a></button></li> {% endcomment %}
+    </ul>
+</div>
 {% comment %} midle in top {% endcomment %}
 {% block conte %}
 <div id="midle" class="">
@@ -180,7 +186,7 @@
                 {% comment %} both ka href are same {% endcomment %}
                 <a  class="comment" href="{% url 'comment' %}">comment</a>        
                 <a  class="comment suggestion as" href="/contact">contact</a>
-                <a class="comment yarri" href="">-+-+-+-+-</a>
+                <a class="comment yarri" href="/login">Admin</a>
             </ul>
         </div>
     </div>

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // "/static/images/logo.png",
         // "/static/images/me2.jpg",
         "/static/images/me3.jpg",
-        "/static/images/me4.jpg",
+        // "/static/images/me4.jpg",
         // "/static/images/me5.jpg",
     ];
     let index = 0;
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded",function () {
 
 document.addEventListener("DOMContentLoaded", () => {
     const welcome = document.getElementById('welcome');
-    messages=["Welcome To My Profile","मेरी प्रोफाइल पर स्वागत है","रउरा सब के स्वागत बा","माझ्या प्रोफाइलमध्ये स्वागत आहे"]
-    color=["#154c79","#004d4b","#b4b4b4","#008080"]
+    messages=["Welcome To My Profile","मेरी प्रोफाइल पर स्वागत है","माझ्या प्रोफाइलमध्ये स्वागत आहे"]
+    color=["#154c79","#004d4b","#008080"]
     let index = 0; 
 
     setInterval(() => {

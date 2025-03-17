@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% load static tailwind_tags %}
+{% tailwind_css %}
+<script src="{% static 'javascript.js' %}"></script>
+<link rel="stylesheet" href={% static "style.css" %}>
+{% block title %}
+        upload | Page
+        {% endblock  %}
+{% block content %}
+<h1 class="wel" >upload</h1>
+{% endblock  %}
+
+{% block conte %}{% endblock  %}
+{% block footer %}{% endblock  %}
+{% block contact %}
+<div class="com ">
+    <h1 class="text-5xl text-sky-400  font-serif">Contact</h1>
+    {% for row in rows %}
+    <div class="commm">
+        {{row}}
+    </div>
+    {% endfor  %}
+    <hr>
+    <h1 class="text-5xl text-sky-400  font-serif">Users</h1>
+    {% for use in uses %}
+    <div class="use">
+        {{use}}
+    </div>
+    {% endfor  %}
+{% endblock  %}

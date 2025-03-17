@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% load static tailwind_tags %}
+{% tailwind_css %}
+<link rel="stylesheet" href='{% static "style.css" %}'>
+<script src="{% static 'javascript.js' %}"></script>
+
+
+{% block title %} {% endblock  %}
+{% block content %} {% endblock  %}
+
+{% block conte %}
+<div class="commentbar">
+    <h1 class ="title">Admin</h1>
+    {% csrf_token %}
+    <form action="/upload/" method="POST" class="form">
+        {% csrf_token %}
+        <label for="username">*userid:</label>
+        
+        <input type="text" name="userid" placeholder="userid" required>
+
+        <label for="useri">*password</label>
+        
+        <input type="text" name="password" placeholder="password" required>
+    
+        {% comment %} <label for="password" class="">Password</label>
+        <input type="password" name="password" placeholder="password"> {% endcomment %}
+
+        
+        <input type="submit" value="Submit">
+    </form>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+<div>
+{% endblock  %}
+
+
+{% block footer %}{% endblock  %}
