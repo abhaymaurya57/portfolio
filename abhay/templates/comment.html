@@ -9,9 +9,12 @@
         {% endblock  %}
 {% block content %}
 
-<h1 class="wel" >comment</h1>
+{% comment %} <h1 class="wel" >comment</h1> {% endcomment %}
 
 {% endblock  %}
+
+{% block navbar %}{% endblock  %}
+
 
 {% block inside %} {% endblock  %}
 
@@ -21,21 +24,20 @@
 {% block midlerightside %}{% endblock  %}
 
 
-{% block footer %}
 
-{% comment %} {% for comm in comment %}
-<div class="">
-    <h3 class="">{{comm.comment}}</h3>
-    <img src="{{comm.image.url}}" alt="" class="">
-</div>
-{% endfor %} {% endcomment %}
-
-{% endblock  %}
 {% load static %}
 {% comment %} <link rel="stylesheet" href={% static "style1.css" %}> {% endcomment %}
 
 {% block comment %}
 <div class="commentbar">
+
+    {% if com %}
+<div id="alert-box" class="alert-box">
+    <span>{{ com }}</span>
+    <button onclick="closeAlert()">×</button>
+</div>
+{% endif %}
+
     <h1 class ="title">Comment</h1>
     {% csrf_token %}
     <form action="/comment/" method="post" class="form">

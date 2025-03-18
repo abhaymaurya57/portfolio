@@ -45,9 +45,7 @@ button a{
     font-weight: 900;
     text-align: center;
     background-color: #16325B;
-    color: #000000;
-    position:sticky;
-    top: 0;
+    color: #f5d3ec;
 
 }
 #nav{
@@ -55,20 +53,19 @@ button a{
     border-style: solid;
     /* border-width: 10px;
     border-color:rgb(23, 58, 58);*/
-    background-color:#096f7a2f;
-
-    color: #71bfd3;
+    background-color:#013338d7;
+    color: #ffc8fa;
+    
+    /* color: #71bfd3; */
     display:flex;
     justify-content:center;
 }
-.navm{
-    margin-left: 0px;
-}
+
 .navm h1{
     font-size:30px;
 }
 .logo{
-    margin-right: 60px;
+    margin-right: 80px;
 
     height: 100px;
     width: 100px;    
@@ -84,6 +81,9 @@ button a{
     /* display: none; */
 }
 #navbar{
+    /* position:sticky;
+    top: 0; */
+    
     background-color: #0d3146;
     /* margin-top: 0px; */
     transition:2s;
@@ -92,7 +92,6 @@ button a{
 }
 .navn{
     
-    margin-left: 0px;
     display:flex;
     justify-content:center;
     /* color: #151552; */
@@ -106,7 +105,8 @@ button a{
 
 
 .navn li a:hover{
-    color:#e081a6;
+    
+    color:#ec3d80;
     transition: 2s;
     transform-style: preserve-3d;
     transform:rotateX(360deg);
@@ -178,7 +178,7 @@ footer{
               /* home bar */
 .home{color: #86d6eb;
       position: relative;
-      margin-left: 40px;
+      margin-left: 100px;
       margin-right: 0;
       width: 100%;
       justify-content: space-between;
@@ -354,7 +354,7 @@ footer{
     transition: 2s;
 }
 #aboutmid{
-    max-width:800px;
+    max-width:100%;
     margin-top: 60px;
     display: flex;
     justify-content: center;
@@ -369,6 +369,24 @@ footer{
     width: 100%;
 }
 
+#aboimg{
+    position: inherit;
+    margin-left: 40px;
+    margin-top: 0px;
+    height: 200px;
+    width: 200px;
+    border: 43px;
+    border-width: 5px;
+    border-style: double;
+    border-color: #060020;
+    border-radius: 7%;
+}
+#abwik{
+    color: #ffffff;
+    margin-left: 60px;
+    width: 100%;
+    margin-bottom: 40px;
+}
 
 /* skill  section */
 #skills{
@@ -415,6 +433,10 @@ footer{
 .title{
     color: rgb(12, 248, 217);
 }
+.commentbar{
+    margin-bottom: 40px;
+
+}
 .commentbar h1{
     margin: 20px;
     font-weight: 800;
@@ -424,6 +446,7 @@ footer{
     
 }
 .form{
+    
     max-width: 600px;
         
         margin: auto;
@@ -496,6 +519,26 @@ footer{
     border-color: rgb(57, 24, 109);
 }
 
+.alert-box {
+    background-color: #9ae66e;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.alert-box button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
 
 
 
@@ -518,24 +561,32 @@ footer{
         
     }
     #nav{
-        background-color: #264653;
+        text-decoration:underline;
+        background-color: #153e58;
+        color: #25969e;
         border: 2px #8fb6d4;
         height:fit-content;
-        height: 70px;
+        height:40px;
+    }
+    .navm{
+        margin-top: 10px;
+
     }
     .navm h1{
-        font-size:15px;
+        text-transform: uppercase;
+        font-size:18px;
     }
     /* .navn li{
         margin-top: 10px;
     } */
     .navn li a{
     
-        color: rgb(36, 156, 172);
+        color: rgb(156, 181, 197);
         border-right: 5px;
         margin-inline: 2px;
     }
     .logo{
+        margin-right: 10px;
         height: 70px;
         width: 70px;
         font-family: sans-serif;
@@ -575,6 +626,7 @@ footer{
     }
     #iconleft img{
         margin-top: 30px;
+        margin-bottom: 20px;
         /* padding-top: 30px; */
         align-items:center;
         display:table-row;
@@ -617,14 +669,16 @@ footer{
                 /* home */
                 .home{
                     margin-left: 0px;
+                    width: 100%;
 
                 }
+                
                 .home-content h3{
                     padding: 20px 0;
 
                     width: 100%;
                     font-size: 25px;
-                    font-weight: 500;
+                    font-weight: 700;
                 }
                 
                 .home-content h1{
@@ -656,24 +710,29 @@ footer{
                 .btn-box{
                     margin-top: 10px;
                 }
+                
     #aboutmid{
-
+        border-style:double;
+        border-width: 4px;
+        border-color: #00065f;
+        margin-top: 0px;
+        margin-left: 0px;
         max-width:100%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
+    display:flex;
+    /* justify-content: center; */
     }
-    #abhimg{
-        margin-left: 20px;
+    #aboimg{
+        margin-top: 0px;
+        margin-left: 0px;
         display: flex;
-        height: 120px;
-        width: 120px;
+        height: 150px;
+        width: 150px;
     }
     #abwik{
+        margin-top: 10px;
+        margin-left: 10px;
         margin-right: 0px;
-       width: 230px;
     }
-
     /* skill */
     .comm{
         margin-top: 105px;
@@ -685,6 +744,7 @@ footer{
         margin:5px;
     } */
     .comment{
+        
         display: flex;
         margin:4px;
         margin-top: 10pz;
@@ -720,6 +780,7 @@ footer{
             margin-top: 20px;  
         }
         .form{
+            margin-bottom: 30px;
             margin-top: 5px;
             /* font-size: 20; */
             height: 100%;

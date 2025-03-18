@@ -41,24 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //                            midle name
 
-// document.addEventListener("DOMContentLoaded",()=>{
-//     const name = document.getElementById("name");
-//     const nam = ["Abhay","Abhay Kumar","Abhay Kumar Maurya"];
-//     color=["#ff7f50","#2F4F4F","#b4b4b4","#008080"]
+document.addEventListener("DOMContentLoaded",()=>{
+    const na = document.getElementById("name");
+    const nam = ["i am","i am corentaly","i am corentaly studey for", "i am corentaly studey for..........."];
+    // colo=["#8c0f56","#360649","#a19cc5","#008080"]
 
-//     let index = 0; 
-//     setInterval(function(){
-//         name.innerHTML=nam[index];
-//         name.style.color=color[index]
-//         index=( index + 1) % nam.length;
-//     },1000)
-// });
-
-
+    let index = 0; 
+    setInterval(function(){
+        na.innerHTML=nam[index];
+        // na.style.color=colo[index]
+        index=( index + 1) % nam.length;
+    },1000)
+});
 // footer
 // last update
 document.addEventListener("DOMContentLoaded", function() {
-    let text = document.lastModified; 
+    let text = new Date(document.lastModified).toLocaleString(); 
     document.getElementById("lastUpdated").innerHTML = text;
 });
 
@@ -84,3 +82,8 @@ document.querySelector('form').addEventListener('submit', function(event) {
         alert('Please fill out all fields.');
     }
 });
+
+
+function closeAlert() {
+    document.getElementById("alert-box").style.display = "none";
+}

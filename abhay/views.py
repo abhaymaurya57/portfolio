@@ -43,13 +43,20 @@ def contact(request):
         email = request.POST.get('email')
         whatsapp = request.POST.get('whatsapp')
 
-        cursor = conn.cursor()
-        query="insert into contact values('{}','{}','{}','{}')".format(name,number,email,whatsapp)
-        cursor.execute(query)
-        conn.commit()
+        
+        try:
+            cursor = conn.cursor()
+            query="insert into contact values('{}','{}','{}','{}')".format(name,number,email,whatsapp)
+            cursor.execute(query)
+            conn.commit()
 
-        contact = Contact(name=name,email=email,phone=number,whatsapp=whatsapp)    #object
-        contact.save()
+            contact = Contact(name=name,email=email,phone=number,whatsapp=whatsapp)    #object
+            contact.save()
+            
+            yes="your messege is succusfuly send"
+            return render(request,'contact.html',{'yes': yes})
+        except:
+            return HttpResponse(f"Database error")
     return render(request,'contact.html')
 
 
@@ -65,15 +72,20 @@ def comment(request):
         feedback = request.POST.get('feedback')
         # comment = Comment(name=name,email=email,phone=phone,feedback=feedback)    #object
         # conn=mysql.connector.connect(host="localhost",user="root",password="Admin",database="comment")
+        try:
+            cursor = conn.cursor()
+            query="insert into users values('{}','{}','{}','{}')".format(name,number,email,feedback)
+            cursor.execute(query)
+            conn.commit()
 
-        cursor = conn.cursor()
-        query="insert into users values('{}','{}','{}','{}')".format(name,number,email,feedback)
-        cursor.execute(query)
-        conn.commit()
 
+            comment = Comment(name=name,email=email,phone=number,feedback=feedback)    #object
+            comment.save()
 
-        comment = Comment(name=name,email=email,phone=number,feedback=feedback)    #object
-        comment.save()
+            com="your messege is succusfuly send"
+            return render(request,'comment.html',{'com': com})
+        except:
+            return HttpResponse("error")
     return render(request,'comment.html')
 
 

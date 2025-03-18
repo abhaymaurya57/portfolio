@@ -5,16 +5,31 @@
 <script src="{% static 'javascript.js' %}"></script>
 <link rel="stylesheet" href={% static "style.css" %}>
 {% block title %}
-        Contact | Page
+        Contact
         {% endblock  %}
 {% block content %}
-<h1 class="wel" >Contact</h1>
+{% comment %} <h1 class="wel" >Contact</h1> {% endcomment %}
 {% endblock  %}
 
-{% block conte %}{% endblock  %}
-{% block footer %}{% endblock  %}
-{% block contact %}
+{% block navbar %}{% endblock  %}
+
+
+{% comment %} {% block conte %}{% endblock  %} {% endcomment %}
+{% comment %} {% block footer %}{% endblock  %} {% endcomment %}
+
+
+{% block conte %}
+
 <div class="commentbar">
+
+    {% if yes %}
+<div id="alert-box" class="alert-box">
+    <span>{{ yes }}</span>
+    <button onclick="closeAlert()">×</button>
+</div>
+{% endif %}
+
+
         <h1 class ="title">Contact</h1>
         {% csrf_token %}
         <form action="/contact/" method="post" class="form">
@@ -32,6 +47,10 @@
                 <input type="text"  name="whatsapp" placeholder="Your whatsapp No." required>
         
             <input type="submit" value="Submit">
+            
         </form>
+        
+        
+        
     </div>
 {% endblock  %}

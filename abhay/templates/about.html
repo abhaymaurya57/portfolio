@@ -5,53 +5,58 @@
 <script src="{% static 'javascript.js' %}"></script>
 <link rel="stylesheet" href={% static "style.css" %}>
 {% block title %}
-        About | Page
+        About
         {% endblock  %}
 {% block content %}
-<h1 class="wel" >About</h1>
+{% comment %} <h1 class="wel" >About</h1> {% endcomment %}
 {% endblock  %}
+
+{% block navbar %}{% endblock  %}
 
 {% block inside %}
 <div class="midlein home">
  <section id="aboutmid" >
-        <div id="abhimg" ><a href="#">
-            <img  src="{% static 'images/me2.jpg' %}" alt=""></a>
-        </div>
+        
         <div id = "abwik" class="home-content" >
-            <h4>
-            I am a passionate Computer Science Engineering student with a strong interest in software development, database management, and web technologies.<br>Currently working on a hospital management system using Python and SQL, I am also learning Django to enhance my skills in web development.<br>
-            I enjoy solving complex problems, building efficient applications, and continuously improving my technical knowledge. My goal is to develop innovative solutions that make a real-world impact.
-            </h4>
+            <div >
+                <a href="#"><img  id="aboimg" src="{% static 'images/me2.jpg' %}" alt=""></a>
+            </div>
+            <div>
+                <h3 class="text-slate-950 font-bold">Abhay Kumar Maurya</h1>
+                    <h2 class="text-sky-200">📍 Computer Science Engineering Student | Python & Django Developer</h2>
+            </div>
+
+            <div>
+                <h3 class="text-slate-950">About Me</h3>
+               <h2 class="text-sky-200"> I am a passionate Computer Science Engineering (CSE) student with a strong foundation in Python, SQL, and Django.<br> 
+                I love developing efficient and scalable applications, with a keen interest in backend development and database management.<br>
+                 Currently, I am working on a ****, which enhances my expertise in web development, database design, and system architecture.</h2>
+            </div>
+            <div>
+                <h3 class="text-slate-950">Technical Skills</h3>
+                <ul class="text-sky-200">
+                    <h4><span class="font-bold text-sky-300">Programming Languages:</span>Python, SQL, Java</h4>
+                    <h4><span class="font-bold text-sky-300">Web Development:</span> Django, HTML, CSS, JavaScript</h4>
+                    <h4><span class="font-bold text-sky-300">Databases:</span> MySQL, SQLite</h4>
+                    <h4><span class="font-bold text-sky-300">Version Control:</span> Git, GitHub</h4>
+                    <h4><span class="font-bold text-sky-300">Tools & Technologies:</span> Windows, VS Code, Postman</h4>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-slate-950">Education</h3>
+                <h4 class="text-sky-200"><span class="font-bold text-sky-300">🎓 [ University] :</span> IET Khandari– B.Tech in Computer Science Engineering</h4>
+                <h4 class="text-sky-200"><span class="font-bold text-sky-300">📅 [ Graduation Year] :</span> 2023-2027</h4>
+                <h4 class="text-sky-200"><span class="font-bold text-sky-300" >🏫 [School] –</span>Gyanoday Inter College Belwania Kushinagar - L.K.G to 10th grade,12th Grade</h4>
+            </div>
+           
+
+                
         </div>
 </section>
 </div>
 {% endblock  %}
 
-{% block leftside %}
-        {% comment %} <div class="leftside">
-            <ul id="iconleft" class="iconright">
-                <li><a href="https://www.linkedin.com/in/abhaykush12" target="_blank">
-                    <img src={% static 'icons/linkdin.png'%}>
-                </a></li>
-                <li><a href="https://github.com/abhaymaurya57" target="_blank">
-                    <img src={% static 'icons/github.png'%}>
-                </a></li>
-                <li><a href="https://gmail.com/abh.mrya1" target='_blank'>
-                    <img src={% static 'icons/gmail.png'%}>
-                </a></li>
-                <li><a href="f">
-                    <img src={% static 'icons/gmail.png'%}>
-                </a></li>
-                <li><a href="f">
-                    <img src={% static 'icons/gmail.png'%}>
-                </a></li>
-                <li><a href="f">
-                    <img src={% static 'icons/gmail.png'%}>
-                </a></li>
-                
-            </ul>
-        </div> {% endcomment %}
-{% endblock  %}
+{% block leftside %}{% endblock  %}
 
 {% block midlerightside %}{% endblock  %}
 {% comment %} {% block footer %}{% endblock  %} {% endcomment %}
