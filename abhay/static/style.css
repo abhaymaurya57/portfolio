@@ -5,9 +5,13 @@
     text-decoration: none;
 }
 
-body{
+html,body{
     /* background-color: rgb(225, 224, 231); */
     background-color:#264653;
+    
+        max-width: 100%!important;
+        overflow-x: hidden!important;
+    
 }
 
 :root{
@@ -546,7 +550,7 @@ footer{
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px ) {
     
     li{ margin-inline: 10px;
         margin-top: 0;

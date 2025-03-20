@@ -1,132 +1,120 @@
-from django.shortcuts import render
-from abhay.models import Comment
-from abhay.models import Contact
 
-from django.shortcuts import get_object_or_404
-from django.contrib import messages
-import mysql.connector
 # from dateti  me import datetime
 # Create your views here.
 
 # def (request):
 #     return render(request,'')
-conn=mysql.connector.connect(host="localhost",user="root",password="Admin",database="comment")
-# cont=mysql.connector.connect(host="localhost",user="root",password="Admin",database="contact")
+from django.shortcuts import render
+from django.http import HttpResponse
+from abhay.models import Comment, Contact
+import mysql.connector
 
-def  base(request):
-    return render(request,'base.html')
+# Establishing MySQL Connection
+conn = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='Admin',
+    database='comment'
+)
 
-# def  home(request):
-#     return render(request,'home.html')
+cursor = conn.cursor()
+
+
+def base(request):
+    return render(request, 'base.html')
+
 
 def about(request):
-    return render(request,'about.html')
+    return render(request, 'about.html')
+
 
 def skill(request):
-    return render(request,'skill.html')
+    return render(request, 'skill.html')
 
 
 def signin(request):
-    return render(request,'signin.html')
+    return render(request, 'signin.html')
+
 
 def signup(request):
-    return render(request,'signup.html')
+    return render(request, 'signup.html')
+
 
 def login(request):
-    return render(request,"login.html")
+    return render(request, "login.html")
 
 
 def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')     #data ko la rahe hai html se
+        name = request.POST.get('name')
         number = request.POST.get('number')
         email = request.POST.get('email')
         whatsapp = request.POST.get('whatsapp')
 
-        
         try:
-            cursor = conn.cursor()
-            query="insert into contact values('{}','{}','{}','{}')".format(name,number,email,whatsapp)
-            cursor.execute(query)
+            query = "INSERT INTO contact (name, number, email, whatsapp) VALUES (%s, %s, %s, %s)"
+            cursor.execute(query, (name, number, email, whatsapp))
             conn.commit()
 
-            contact = Contact(name=name,email=email,phone=number,whatsapp=whatsapp)    #object
+            # Save using Django ORM
+            contact = Contact(name=name, email=email, phone=number, whatsapp=whatsapp)
             contact.save()
-            
-            yes="your messege is succusfuly send"
-            return render(request,'contact.html',{'yes': yes})
-        except:
-            return HttpResponse(f"Database error")
-    return render(request,'contact.html')
+
+            return render(request, 'contact.html', {'yes': "Your message was successfully sent."})
+        except mysql.connector.Error as err:
+            return HttpResponse(f"Database error: {err}")
+
+    return render(request, 'contact.html')
 
 
-                           # mysql
-# from django.views.decorators.csrf import csrf_exempt
-
-# @csrf_exempt
 def comment(request):
-    if request.method=='POST':
-        name = request.POST.get('name')     #data ko la rahe hai html se
+    if request.method == 'POST':
+        name = request.POST.get('name')
         number = request.POST.get('number')
         email = request.POST.get('email')
         feedback = request.POST.get('feedback')
-        # comment = Comment(name=name,email=email,phone=phone,feedback=feedback)    #object
-        # conn=mysql.connector.connect(host="localhost",user="root",password="Admin",database="comment")
+
         try:
-            cursor = conn.cursor()
-            query="insert into users values('{}','{}','{}','{}')".format(name,number,email,feedback)
-            cursor.execute(query)
+            query = "INSERT INTO users (name, number, email, feedback) VALUES (%s, %s, %s, %s)"
+            cursor.execute(query, (name, number, email, feedback))
             conn.commit()
 
-
-            comment = Comment(name=name,email=email,phone=number,feedback=feedback)    #object
+            # Save using Django ORM
+            comment = Comment(name=name, email=email, phone=number, feedback=feedback)
             comment.save()
 
-            com="your messege is succusfuly send"
-            return render(request,'comment.html',{'com': com})
-        except:
-            return HttpResponse("error")
-    return render(request,'comment.html')
+            return render(request, 'comment.html', {'com': "Your message was successfully sent."})
+        except mysql.connector.Error as err:
+            return HttpResponse(f"Database error: {err}")
+
+    return render(request, 'comment.html')
 
 
-
-from django.http import HttpResponse
-def upload(request): 
+def upload(request):
     if request.method == 'POST':
-        userid = request.POST.get('userid')     #data ko la rahe hai html se
+        userid = request.POST.get('userid')
         password = request.POST.get('password')
 
         if not userid or not password:
             return render(request, 'login.html', {'error': 'Both fields are required'})
-        
+
         try:
-            db = mysql.connector.connect(
-                        host='localhost',
-                        user='root',
-                        password='Admin',
-                        database='comment'
-                        )
-            cur = db.cursor()
             query = "SELECT * FROM login WHERE userid = %s AND password = %s"
-            cur.execute(query, (userid, password))
-            user = cur.fetchone()
+            cursor.execute(query, (userid, password))
+            user = cursor.fetchone()
 
             if user:
-                query = "SELECT * FROM comment.contact "
-                curso = db.cursor()
-                curso.execute(query)
-                rows = curso.fetchall()
+                cursor.execute("SELECT * FROM contact")
+                rows = cursor.fetchall()
 
-                query = "SELECT * FROM comment.users"
-                cursor = db.cursor()
-                cursor.execute(query)
-                uses = cursor.fetchall()
-                return render(request, 'upload.html', {'rows': rows,'uses':uses})
+                cursor.execute("SELECT * FROM users")
+                users = cursor.fetchall()
+
+                return render(request, 'upload.html', {'rows': rows, 'uses': users})
             else:
                 return render(request, 'login.html', {'error': 'Invalid userid or password'})
 
         except mysql.connector.Error as err:
             return HttpResponse(f"Database error: {err}")
+
     return render(request, 'login.html')
-    
-            
